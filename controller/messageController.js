@@ -3,7 +3,6 @@ const UserModel = require('../Model/userModel')
 const expressAsyncHandler = require('express-async-handler')
 const userModel = require('../Model/userModel')
 const messageController = expressAsyncHandler (async (req, res) =>{
-    console.log("body-->",req.body)
     const{name, email, message} = req.body;
 
     if(!name || !email || !message){

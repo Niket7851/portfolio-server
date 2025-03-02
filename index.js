@@ -13,7 +13,6 @@ const MONGOURI = process.env.MONGO_URI;
 const connectDb = async () =>{
     try{
         const connect = await mongoose.connect(process.env.MONGO_URI).then(
-            console.log("MongoDb Database Connected")
         );
     }catch(err){
         console.log("Database is not connected",err);
@@ -28,5 +27,5 @@ app.get("/",(req,res)=>{
 
 app.use("/user",userRoutes)
 
-app.listen(PORT, console.log("Server is Running..."))
+app.listen(PORT);
 connectDb();
